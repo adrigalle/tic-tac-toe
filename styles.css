@@ -31,6 +31,9 @@ button {
   body {
     font-family: 'Comfortaa', cursive;
   }
+  .title {
+    color: #FFC4A9;
+  }
   .square-h1 {
     font-size: 40px;
   }
@@ -42,4 +45,15 @@ button {
   }
   .white {
     color: white;
+  }
+  .winner-reset {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+  }
+  .reset {
+    font-family: 'Comfortaa', cursive;
+    font-size: 30px;
+    color: grey;
+    margin-right: 10px;
   }

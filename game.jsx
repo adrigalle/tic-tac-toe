@@ -3,6 +3,7 @@ const Board = () => {
     // State keeps track of next player and gameState
     const [player, setPlayer] = React.useState(1);
     const [gameState, setGameState] = React.useState([]);
+
     let status = `Winner is ${checkForWinner(gameState)}`;
   
     // Part 1 step 1 code goes here
@@ -40,7 +41,10 @@ const Board = () => {
         </div>
         <div id="info">
           <h1 id="turn">{playerTurn}</h1>
-          <h1>{status}</h1>
+          <div className="winner-reset">
+            <h1>{status}</h1>
+            <a href=""><button className="reset">Reset</button></a>
+          </div>
         </div>
       </div>
     );
@@ -54,15 +58,25 @@ const Board = () => {
     // You call takeTurn to tell Parent that the square has been filled
     const [filled, setFilled] = React.useState(false);
     const [tik, setTik] = React.useState(null);
+    const [disabled, setDisabled] = React.useState(false);
+
+    const clearState = () => {
+      setDisabled(false);
+      setTik(null);
+      setFilled(false);
+    }
   
     return (
       <button
         // Part 2: update the return statement below to add css classes
+        disabled={disabled}
         className={tik == '1' ? 'red' : 'white'}
         onClick={() => {
           setTik(takeTurn(id));
           setFilled(true);
           console.log(`Square: ${id} filled by player : ${tik}`);
+          setDisabled(true);
+          
         }}
       >
         <h1 className="square-h1">{mark[tik]}</h1>

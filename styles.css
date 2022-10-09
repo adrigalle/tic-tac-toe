@@ -44,7 +44,7 @@ button {
     color: rgb(155, 92, 92);
   }
   .white {
-    color: rgb(224, 221, 221);
+    color: #739dc7;
   }
   .winner-reset {
     display: flex;

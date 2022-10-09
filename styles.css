@@ -41,10 +41,10 @@ button {
     margin-left: 10px;
   }
   .red {
-    color: red;
+    color: rgb(155, 92, 92);
   }
   .white {
-    color: white;
+    color: rgb(224, 221, 221);
   }
   .winner-reset {
     display: flex;
